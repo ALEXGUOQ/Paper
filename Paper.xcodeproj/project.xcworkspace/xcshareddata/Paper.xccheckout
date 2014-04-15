@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB45617E-CB85-41CF-95EF-2F3F2E03414D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Paper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F61C3A3D-AF17-42BB-9C5E-C5C5B7CBC604</key>
+		<string>https://github.com/swtlovewtt/Paper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Paper.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F61C3A3D-AF17-42BB-9C5E-C5C5B7CBC604</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/swtlovewtt/Paper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F61C3A3D-AF17-42BB-9C5E-C5C5B7CBC604</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F61C3A3D-AF17-42BB-9C5E-C5C5B7CBC604</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Paper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
