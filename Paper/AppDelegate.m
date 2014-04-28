@@ -7,14 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import "SmallLayout.h"
+#import "SmallCollectionViewController.h"
+
+@interface AppDelegate () <UINavigationControllerDelegate>
+
+@property (nonatomic) UINavigationController *navigationController;
+
+@end
 
 @implementation AppDelegate
 
+#pragma mark - UINavigationControllerDelegate
+
+
+
+#pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    
+    SmallLayout *smallLayout = [[SmallLayout alloc] init];
+    SmallCollectionViewController *vc = [[SmallCollectionViewController alloc] initWithCollectionViewLayout:smallLayout];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.navigationController.delegate = self;
+    self.navigationController.navigationBarHidden = YES;
+    
+    
+    
+    
+    
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
