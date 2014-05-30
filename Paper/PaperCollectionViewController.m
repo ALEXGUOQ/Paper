@@ -7,7 +7,7 @@
 //
 
 #import "PaperCollectionViewController.h"
-
+#import "TransitionLayout.h"
 @interface PaperCollectionViewController ()
 
 @end
@@ -31,6 +31,13 @@
 - (UICollectionViewController*)nextViewControllerAtPoint:(CGPoint)point
 {
     return nil;
+}
+
+- (UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView
+                        transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout
+{
+    TransitionLayout *transitionLayout = [[TransitionLayout alloc] initWithCurrentLayout:fromLayout nextLayout:toLayout];
+    return transitionLayout;
 }
 - (void)viewDidLoad
 {
@@ -63,13 +70,19 @@
     cell.layer.cornerRadius = 4;
     cell.clipsToBounds = YES;
     
-    UIImageView *backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Cell"]];
+    UIImageView *backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fake-cell"]];
     cell.backgroundView = backgroundView;
     
     return cell;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // Adjust scrollView decelerationRate
+    self.collectionView.decelerationRate = self.class != [PaperCollectionViewController class] ? UIScrollViewDecelerationRateNormal : UIScrollViewDecelerationRateFast;
+}
 
 /*
 #pragma mark - Navigation

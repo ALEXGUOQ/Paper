@@ -26,6 +26,7 @@
 		65D3DAC718FD20DB00A8660E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65D3DAC518FD20DB00A8660E /* InfoPlist.strings */; };
 		65D3DAC918FD20DB00A8660E /* PaperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D3DAC818FD20DB00A8660E /* PaperTests.m */; };
 		65D3DAD718FD219800A8660E /* PaperCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D3DAD618FD219800A8660E /* PaperCollectionViewController.m */; };
+		65DC15BF193700BD00A56F8B /* fake-cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DC15BE193700BD00A56F8B /* fake-cell@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		65D3DAC818FD20DB00A8660E /* PaperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaperTests.m; sourceTree = "<group>"; };
 		65D3DAD518FD219800A8660E /* PaperCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCollectionViewController.h; sourceTree = "<group>"; };
 		65D3DAD618FD219800A8660E /* PaperCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperCollectionViewController.m; sourceTree = "<group>"; };
+		65DC15BE193700BD00A56F8B /* fake-cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fake-cell@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				65D3DAB218FD20DB00A8660E /* AppDelegate.h */,
 				65D3DAB318FD20DB00A8660E /* AppDelegate.m */,
+				65DC15BE193700BD00A56F8B /* fake-cell@2x.png */,
 				65D3DAD218FD215900A8660E /* ViewController */,
 				65D3DAD318FD216800A8660E /* Transition */,
 				65D3DAD418FD217300A8660E /* Custom Layout */,
@@ -277,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DC15BF193700BD00A56F8B /* fake-cell@2x.png in Resources */,
 				65D3DAAE18FD20DB00A8660E /* InfoPlist.strings in Resources */,
 				65D3DAB618FD20DB00A8660E /* Images.xcassets in Resources */,
 			);
@@ -424,7 +428,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Paper/Paper-Prefix.pch";
 				INFOPLIST_FILE = "Paper/Paper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,7 +443,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Paper/Paper-Prefix.pch";
 				INFOPLIST_FILE = "Paper/Paper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

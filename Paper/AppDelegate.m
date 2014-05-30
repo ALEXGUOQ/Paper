@@ -9,19 +9,58 @@
 #import "AppDelegate.h"
 #import "SmallLayout.h"
 #import "SmallCollectionViewController.h"
-
-@interface AppDelegate () <UINavigationControllerDelegate>
+#import "TransitionController.h"
+@interface AppDelegate () <UINavigationControllerDelegate,TransitionControllerDelegate>
 
 @property (nonatomic) UINavigationController *navigationController;
-
+@property (nonatomic) TransitionController *transitionController;
 @end
 
 @implementation AppDelegate
 
 #pragma mark - UINavigationControllerDelegate
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
+{
+    if (animationController==self.transitionController) {
+        return self.transitionController;
+    }
+    return nil;
+}
 
 
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)fromVC
+                                                  toViewController:(UIViewController *)toVC
+{
+    if (![fromVC isKindOfClass:[UICollectionViewController class]] || ![toVC isKindOfClass:[UICollectionViewController class]])
+    {
+        return nil;
+    }
+    if (!self.transitionController.hasActiveInteraction)
+    {
+        return nil;
+    }
+    
+    self.transitionController.navigationOperation = operation;
+    return self.transitionController;
+}
 
+#pragma mark - TransitionControllerDelegate
+-(void)interactionBeganAtPoint:(CGPoint)point
+{
+    SmallCollectionViewController *presentingVC = (SmallCollectionViewController *)[self.navigationController topViewController];
+    SmallCollectionViewController *presentedVC = (SmallCollectionViewController *)[presentingVC nextViewControllerAtPoint:point];
+    if (presentedVC!=nil)
+    {
+        [self.navigationController pushViewController:presentedVC animated:YES];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 #pragma mark - UIApplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -37,7 +76,8 @@
     self.navigationController.delegate = self;
     self.navigationController.navigationBarHidden = YES;
     
-    
+    self.transitionController = [[TransitionController alloc] initWithCollectionView:vc.collectionView];
+    self.transitionController.delegate = self;
     
     
     
